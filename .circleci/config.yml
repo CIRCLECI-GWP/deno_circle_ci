@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+      - image: denoland/deno:1.10.3
+    steps:
+      - checkout
+      - run: |
+          deno test --allow-net server.test.ts
+
+workflows:
+  sample:
+    jobs:
+      - build-and-test
