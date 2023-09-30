@@ -7,7 +7,6 @@ jobs:
     steps:
       - checkout
       - run: |
-          deno --version 
           deno test --allow-net server.test.ts
 
 workflows:
